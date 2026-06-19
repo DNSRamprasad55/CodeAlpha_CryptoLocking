@@ -1,21 +1,21 @@
-# CodeAlpha Polling System Smart Contract
+# CodeAlpha Crypto Locking Smart Contract
 
 ## Overview
 
-This project is a blockchain based polling system developed using Solidity as part of the CodeAlpha Blockchain Development Internship.
+A crypto time-lock smart contract developed using Solidity.
 
-The smart contract allows users to create polls, vote securely, prevent duplicate voting, and find the winning option after the poll ends.
+Users can deposit ETH with a lock period and withdraw only after the lock time is completed.
 
 ## Features
 
-- Create polls with title and multiple options
-- Add voting deadline
-- Secure voting system
-- One wallet address can vote only once
-- Prevent duplicate voting using mappings
-- Store vote count securely
-- Time based voting using block.timestamp
-- Find winning option after poll completion
+- Deposit Ether into smart contract
+- Set custom lock duration
+- Store deposit amount
+- Store unlock time
+- Mapping based user records
+- Uses block.timestamp
+- Prevents early withdrawal
+- Allows withdrawal after unlock time
 
 ## Technologies Used
 
@@ -25,25 +25,25 @@ The smart contract allows users to create polls, vote securely, prevent duplicat
 
 ## Smart Contract Functions
 
-### createPoll()
-Creates a new poll with title, options and deadline.
+### deposit()
 
-### vote()
-Allows users to vote before deadline.
+Allows users to deposit ETH with lock duration.
 
-### getPoll()
-Returns poll details.
+### withdraw()
 
-### getWinner()
-Returns the winning option after voting ends.
+Allows withdrawal only after lock time.
+
+### getContractBalance()
+
+Returns smart contract ETH balance.
+
 
 ## Testing
 
 Successfully tested:
 
-- Contract deployment
-- Poll creation
-- Voting
-- Duplicate vote blocking
-- Deadline restriction
-- Winner calculation
+- ETH deposit
+- Amount storage
+- Unlock time storage
+- Early withdrawal blocking
+- Successful withdrawal after unlock time
